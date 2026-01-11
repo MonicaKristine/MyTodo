@@ -1,0 +1,51 @@
+.caption-text {
+  background-color: rgba(241, 241, 241, 0.548);
+}
+
+.todo-btn {
+  margin: 5px;
+}
+
+.todo-btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo-navbar {
+  background-color: rgb(241, 241, 241);
+}
+
+.todo-page {
+  padding: 100px;
+}
+
+.login-form {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.btn-primary.pink-black-btn {
+  --bs-btn-bg: rgb(240, 203, 211);
+  --bs-btn-border-color: black;
+  --bs-btn-color: black;
+  --bs-btn-hover-bg: rgb(240, 203, 211);
+  --bs-btn-hover-border-color: black;
+  --bs-btn-hover-color: rgb(255, 255, 255);
+  --bs-btn-active-bg: rgb(225, 131, 146);
+  --bs-btn-active-border-color: rgb(225, 131, 146);
+  --bs-btn-active-color: rgb(255, 255, 255);
+}
+
+.btn-primary.pink-btn {
+  --bs-btn-bg: rgb(240, 203, 211);
+  --bs-btn-border-color: rgb(240, 203, 211);
+  --bs-btn-color: rgb(255, 255, 255);
+  --bs-btn-hover-bg: rgb(240, 203, 211);
+  --bs-btn-hover-border-color: rgb(240, 203, 211);
+  --bs-btn-hover-color: black;
+  --bs-btn-active-bg: rgb(225, 131, 146);
+  --bs-btn-active-border-color: rgb(225, 131, 146);
+  --bs-btn-active-color: black;
+}
+
+

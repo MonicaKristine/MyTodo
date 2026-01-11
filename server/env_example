@@ -1,0 +1,7 @@
+HOST = "localhost"
+ADMIN_USERNAME = ""
+ADMIN_PASSWORD = ""
+DATABASE_NAME = "myTodo"
+DIALECT = "mysql"
+PORT = "3000"
+TOKEN_SECRET=
