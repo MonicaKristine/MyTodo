@@ -2,7 +2,7 @@
 
 This repository contains a **Todo List application**
 
-- The **backend** was created as part of a REST API course assignment.
+- The **backend** is build using Node.js and Expressjs.
 - The **frontend** is built with React and Vite, developed afterwards to interact with the backend.
 
 ## Features

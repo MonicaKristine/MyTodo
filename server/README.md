@@ -1,10 +1,4 @@
-# Noroff
-
-## Back-end Development Year 1
-
-### REST API - Course Assignment 1 <sup>V2</sup>
-
-## This is the **backend** for the Todo List application. This was part of a Cours Assignment in the REST API Course.
+## This is the **backend** for the Todo List application. 
 
 # Application Installation and Usage Instructions
 
