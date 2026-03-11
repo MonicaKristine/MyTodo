@@ -64,7 +64,6 @@ describe('testing-todos-routes', () => {
     //3. Using the token from 1. and add a new Todo item
     test('POST /todos - success', async() => {
         const credentials = {name: 'Test application', description: 'Todo for test purposes', CategoryId: categoryId, StatusId: '1'};
-        console.log(credentials);
         const { body } = await request(app)
             .post('/todos')
             .set('Authorization', 'Bearer ' + token)

@@ -2,8 +2,6 @@
 
 This is the **frontend** for the Todo List application. The functions are made to fit the backend endpoints.
 
-This is the first versions - and all functions are not working yet.
-
 # Features
 
 - Sign up with a user to get started
@@ -11,7 +9,7 @@ This is the first versions - and all functions are not working yet.
 - View a list of existing todos, change view between active todos, deleted todos or all todos
 - Add new categories
 - Add new todos
-- Delete existing todos
+- Delete or edit existing todos
 
 # Application Installation and Usage Instructions
 

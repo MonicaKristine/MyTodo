@@ -10,7 +10,7 @@ This repository contains a **Todo List application**
 ### Frontend (Client)
 
 - User sign-up and login
-- Some of the functionalities for the todo application (view todos, add categories and todos, delete todos)
+- Some of the functionalities for the todo application (view todos, add categories and todos, delete and edit todos)
 
 ### Backend (Server)
 

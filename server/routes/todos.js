@@ -103,7 +103,6 @@ router.get('/statuses', isAuth, async (req, res) => {
         return res.status(404).jsend.fail({"statusCode": 404, "result": "User not found"});
     }
 	const statuses = await todoService.getStatuses();
-	console.log(statuses);
 	res.jsend.success({"statusCode": 200, "result": "List of all statuses available", Statuses: statuses})
 });
 

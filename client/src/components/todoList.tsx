@@ -2,20 +2,23 @@ import { useEffect, useState } from "react";
 import { ButtonGroup, ListGroup, Button } from "react-bootstrap";
 import { activeTodos, allTodos, deletedTodos, deleteTodo } from "../api/todos";
 import { addCategory } from "../api/categories";
+import EditTodoModal from "./editTodo";
+import type { EditTodoType } from "./editTodo";
 
 export type Todo = {
   id: number;
   name: string;
   description: string;
   UserId: number;
-  Status: { status: string };
-  Category: { name: string };
+  Status: { status: string; id: number };
+  Category: { name: string; id: number };
 };
 
 function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [editingTodo, setEditingTodo] = useState<EditTodoType | null>(null);
 
   useEffect(() => {
     fetchTodos(activeTodos);
@@ -45,7 +48,7 @@ function TodoList() {
     try {
       await addCategory(name);
       alert(
-        `Category ${name} added successfully! Please refresh the page to find it under Category-dropdown`
+        `Category ${name} added successfully! Please refresh the page to find it under Category-dropdown`,
       );
     } catch (err: unknown) {
       if (err instanceof Error) {
@@ -56,8 +59,14 @@ function TodoList() {
     }
   };
 
-  const editTodoClick = async () => {
-    alert("This function is not working yet");
+  const editTodoClick = async (
+    id: number,
+    name: string,
+    description: string,
+    status: string,
+    category: string,
+  ) => {
+    setEditingTodo({ id, name, description, status, category });
   };
 
   const deleteTodoClick = async (id: number) => {
@@ -111,7 +120,18 @@ function TodoList() {
               {todo.Status.status} · {todo.Category.name}
             </small>
             <div className="todo-btn-div">
-              <Button className="pink-btn todo-btn" onClick={editTodoClick}>
+              <Button
+                className="pink-btn todo-btn"
+                onClick={() =>
+                  editTodoClick(
+                    todo.id,
+                    todo.name,
+                    todo.description,
+                    todo.Status.status,
+                    todo.Category.name,
+                  )
+                }
+              >
                 Edit
               </Button>
               {todo.Status.status !== "Deleted" && (
@@ -126,6 +146,15 @@ function TodoList() {
           </ListGroup.Item>
         ))}
       </ListGroup>
+
+      {editingTodo && (
+        <EditTodoModal
+          show={!!editingTodo}
+          todo={editingTodo}
+          onClose={() => setEditingTodo(null)}
+          onSaved={() => fetchTodos(activeTodos)}
+        />
+      )}
     </>
   );
 }

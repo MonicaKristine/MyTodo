@@ -19,7 +19,7 @@ function AddTodo() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedStatus, setSelectedStatus] = useState<Status | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
-    null
+    null,
   );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

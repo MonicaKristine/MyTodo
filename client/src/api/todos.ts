@@ -57,6 +57,23 @@ export async function addTodo(name: string, description: string, StatusId: numbe
     return res.json();
 }
 
+export async function editTodo(id: number, newName: string, newDescription: string, newStatusId: number, newCategoryId: number) {
+    const token = localStorage.getItem("token");
+    const res = await fetch(`/api/todos/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json', Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({newName, newDescription, newStatusId, newCategoryId})
+    });
+
+    if(!res.ok) {
+        const error = await res.json().catch(() => null);
+        throw new Error(error?.message ?? 'Failed to add todo');
+    }
+    return res.json();
+}
+
 export async function deleteTodo(id: number) {
     const token = localStorage.getItem("token");
     const res = await fetch(`/api/todos/${id}`, {
